@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MenStyle | Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="product-page">
+
+  <!-- FLOATING NAVBAR -->
+  <div class="nav-wrapper">
+    <nav class="nav-bar">
+      <div class="nav-left">NAYAAB</div>
+
+      <div class="nav-center">
+        <a href="index.html">HOME</a>
+        <a href="product.html" class="active">SHOP</a>
+        <a href="#rings">RINGS</a>
+        <a href="#watches">WATCHES</a>
+        <a href="#bracelets">BRACELETS</a>
+        <a href="#">CONTACT</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="cart.html">CART (0)</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- PAGE CONTENT -->
+  <main class="product-container">
+
+    <!-- ================= RINGS ================= -->
+    <section class="category-section" id="rings">
+      <h2 class="category-title">Rings</h2>
+
+      <div class="product-grid">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-card">
+          <img src="images/rings/ring1-1.jpg" class="main-img" id="ring1-main" onclick="openModal(this.src)">
+
+          <div class="thumb-row">
+            <img src="images/rings/ring1-1.jpg" onclick="changeImg('ring1-main','images/rings/ring1-1.jpg')">
+            <img src="images/rings/ring1-2.jpg" onclick="changeImg('ring1-main','images/rings/ring1-2.jpg')">
+            <img src="images/rings/ring1-3.jpg" onclick="changeImg('ring1-main','images/rings/ring1-3.jpg')">
+          </div>
+
+          <h3>Silver Ring</h3>
+          <p class="price">₹1499</p>
+          <button class="btn" onclick="addToCart(this,'Silver Ring', 1499, 'images/rings/ring1-1.jpg')">Add to Cart</button>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="product-card">
+          <img src="images/rings/ring2-1.jpg" class="main-img"  id="ring2-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/rings/ring2-1.jpg" onclick="changeImg('ring2-main','images/rings/ring2-1.jpg')">
+            <img src="images/rings/ring2-2.jpg" onclick="changeImg('ring2-main','images/rings/ring2-2.jpg')">
+            <img src="images/rings/ring2-3.jpg" onclick="changeImg('ring2-main','images/rings/ring2-3.jpg')">
+          </div>
+
+          <h3>Black Metal Ring</h3>
+          <p class="price">₹1299</p>
+          <button class="btn" onclick="addToCart(this,'Black Metal Ring', 1299, 'images/rings/ring2-1.jpg')">Add to Cart</button>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="product-card">
+          <img src="images/rings/ring3-1.jpg" class="main-img" id="ring3-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/rings/ring3-1.jpg" onclick="changeImg('ring3-main','images/rings/ring3-1.jpg')">
+            <img src="images/rings/ring3-2.jpg" onclick="changeImg('ring3-main','images/rings/ring3-2.jpg')">
+            <img src="images/rings/ring3-3.jpg" onclick="changeImg('ring3-main','images/rings/ring3-3.jpg')">
+          </div>
+
+          <h3>Minimal Steel Ring</h3>
+          <p class="price">₹1599</p>
+          <button class="btn" onclick="addToCart(this,'Minimal Steel Ring', 1599, 'images/rings/ring3-1.jpg')">Add to Cart</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= WATCHES ================= -->
+    <section class="category-section" id="watches">
+      <h2 class="category-title">Watches</h2>
+
+      <div class="product-grid">
+
+       <div class="product-card">
+        <img src="images/watches/watch1-1.jpg" class="main-img" id="watch1-main" onclick="openModal(this.src)">
+        <div class="thumb-row">
+          <img src="images/watches/watch1-1.jpg" onclick="changeImg('watch1-main','images/watches/watch1-1.jpg')">
+          <img src="images/watches/watch1-2.jpg" onclick="changeImg('watch1-main','images/watches/watch1-2.jpg')">
+          <img src="images/watches/watch1-3.jpg" onclick="changeImg('watch1-main','images/watches/watch1-3.jpg')">
+        </div>
+        <h3>Leather Strap Watch</h3>
+        <p class="price">₹2999</p>
+        <button class="btn" onclick="addToCart(this,'Leather Strap Watch', 2999, 'images/watches/watch1-1.jpg')">Add to Cart</button>
+      </div>
+
+
+        <div class="product-card">
+          <img src="images/watches/watch2-1.jpg" class="main-img" id="watch2-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/watches/watch2-1.jpg" onclick="changeImg('watch2-main','images/watches/watch2-1.jpg')">
+            <img src="images/watches/watch2-2.jpg" onclick="changeImg('watch2-main','images/watches/watch2-2.jpg')">
+            <img src="images/watches/watch2-3.jpg" onclick="changeImg('watch2-main','images/watches/watch2-3.jpg')">
+          </div>
+          <h3>Classic Black Watch</h3>
+          <p class="price">₹3499</p>
+          <button class="btn" onclick="addToCart(this,'Classic Black Watch', 3499, 'images/watches/watch2-1.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/watches/watch3-1.jpg" class="main-img" id="watch3-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/watches/watch3-1.jpg" onclick="changeImg('watch3-main','images/watches/watch3-1.jpg')">
+            <img src="images/watches/watch3-2.jpg" onclick="changeImg('watch3-main','images/watches/watch3-2.jpg')">
+            <img src="images/watches/watch3-3.jpg" onclick="changeImg('watch3-main','images/watches/watch3-3.jpg')">
+          </div>
+          <h3>Minimal Steel Watch</h3>
+          <p class="price">₹3799</p>
+          <button class="btn" onclick="addToCart(this,'Minimal Steel Watch', 3799, 'images/watches/watch3-1.jpg')">Add to Cart</button>
+        </div>
+        
+
+      </div>
+    </section>
+
+    <!-- ================= BRACELETS ================= -->
+    <section class="category-section" id="bracelets">
+      <h2 class="category-title">Bracelets</h2>
+
+      <div class="product-grid">
+
+        <div class="product-card">
+          <img src="images/bracelets/bracelet1-1.jpg" class="main-img" id="bracelet1-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/bracelets/bracelet1-1.jpg" onclick="changeImg('bracelet1-main','images/bracelets/bracelet1-1.jpg')">
+            <img src="images/bracelets/bracelet1-2.jpg" onclick="changeImg('bracelet1-main','images/bracelets/bracelet1-2.jpg')">
+            <img src="images/bracelets/bracelet1-3.jpg" onclick="changeImg('bracelet1-main','images/bracelets/bracelet1-3.jpg')">
+          </div>
+          <h3>Leather Bracelet</h3>
+          <p class="price">₹999</p>
+          <button class="btn" onclick="addToCart('Leather Bracelet', 999, 'images/bracelets/bracelet1-1.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/bracelets/bracelet2-1.jpg" class="main-img" id="bracelet2-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/bracelets/bracelet2-1.jpg" onclick="changeImg('bracelet2-main','images/bracelets/bracelet2-1.jpg')">
+            <img src="images/bracelets/bracelet2-2.jpg" onclick="changeImg('bracelet2-main','images/bracelets/bracelet2-2.jpg')">
+            <img src="images/bracelets/bracelet2-3.jpg" onclick="changeImg('bracelet2-main','images/bracelets/bracelet2-3.jpg')">
+          </div>
+          <h3>Minimal Bracelet</h3>
+          <p class="price">₹1099</p>
+          <button class="btn" onclick="addToCart('Minimal Bracelet', 1099, 'images/bracelets/bracelet2-1.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/bracelets/bracelet3-1.jpg" class="main-img" id="bracelet3-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/bracelets/bracelet3-1.jpg" onclick="changeImg('bracelet3-main','images/bracelets/bracelet3-1.jpg')">
+            <img src="images/bracelets/bracelet3-2.jpg" onclick="changeImg('bracelet3-main','images/bracelets/bracelet3-2.jpg')">
+            <img src="images/bracelets/bracelet3-3.jpg" onclick="changeImg('bracelet3-main','images/bracelets/bracelet3-3.jpg')">
+          </div>
+          <h3>Steel Chain Bracelet</h3>
+          <p class="price">₹1299</p>
+          <button class="btn" onclick="addToCart('Steel Chain Bracelet', 1299, 'images/bracelets/bracelet3-1.jpg')">Add to Cart</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <!-- IMAGE MODAL -->
+<div id="imgModal" class="img-modal" onclick="closeModal()">
+  <span class="close-btn">&times;</span>
+  <img id="modalImg">
+</div>
+
+
+  <!-- SCRIPT -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
