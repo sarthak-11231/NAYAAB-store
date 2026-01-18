@@ -1,28 +1,3 @@
-const products = [
-  {
-    name: "Black Stud Earrings",
-    price: 999,
-    image: "https://m.media-amazon.com/images/I/61yZ1ZK0H9L._AC_UL320_.jpg",
-    description: "Stylish black stud earrings for men",
-    category: "Earrings"
-  },
-  {
-    name: "Silver Ring",
-    price: 1499,
-    image: "https://m.media-amazon.com/images/I/61oQX9m8F9L._AC_UL320_.jpg",
-    description: "Premium silver ring for men",
-    category: "Rings"
-  },
-  {
-    name: "Leather Strap Watch",
-    price: 2999,
-    image: "https://m.media-amazon.com/images/I/71KQ6+3zGWL._AC_UL320_.jpg",
-    description: "Classic leather strap watch for men",
-    category: "Watches"
-  }
-];
-
-// Show products only on product.html
 if (document.getElementById("product-list")) {
   const container = document.getElementById("product-list");
 
@@ -42,12 +17,6 @@ if (document.getElementById("product-list")) {
   });
 }
 
-function makePayment() {
-  alert("Payment Successful ✅ (Demo)");
-  localStorage.removeItem("cart");
-  window.location.href = "index.html";
-}
-
 function changeImg(mainId, imgPath) {
   document.getElementById(mainId).src = imgPath;
 }
@@ -61,16 +30,12 @@ function closeModal() {
   document.getElementById("imgModal").style.display = "none";
 }
 
-// =========================
-// ADD TO CART LOGIC
-// =========================
 
-// Get cart from localStorage
 function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
-// Save cart
+
 function saveCart(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
@@ -81,20 +46,20 @@ function addToCart(button, name, price, image) {
   let cart = getCart();
 
   cart.push({
-    name: name,
-    price: price,
-    image: image,
+    name: String(name),           
+    price: Number(price),         
+    image: String(image),
     quantity: 1
   });
 
   saveCart(cart);
 
-  // Button feedback animation
+  
   const originalText = button.textContent;
   const originalBg = button.style.background;
 
   button.textContent = "Added ✓";
-  button.style.background = "#999"; // gray
+  button.style.background = "#999";
   button.disabled = true;
 
   setTimeout(() => {
@@ -105,7 +70,6 @@ function addToCart(button, name, price, image) {
 }
 
 
-// Update cart count in navbar
 function updateCartCount() {
   const cart = getCart();
   const cartCount = cart.length;
@@ -116,19 +80,17 @@ function updateCartCount() {
   }
 }
 
-// Run on page load
+
 updateCartCount();
 
-// =========================
-// CART PAGE LOGIC
-// =========================
+
 
 function loadCart() {
   const cart = getCart();
   const cartItemsDiv = document.getElementById("cartItems");
   const cartTotalDiv = document.getElementById("cartTotal");
 
-  if (!cartItemsDiv) return;
+  if (!cartItemsDiv || !cartTotalDiv) return;
 
   cartItemsDiv.innerHTML = "";
   let total = 0;
@@ -140,7 +102,7 @@ function loadCart() {
   }
 
   cart.forEach((item, index) => {
-    total += item.price;
+    total += Number(item.price);   
 
     cartItemsDiv.innerHTML += `
       <div class="product-card" style="flex-direction:row;gap:20px;margin-bottom:20px;">
@@ -159,9 +121,9 @@ function loadCart() {
   cartTotalDiv.textContent = "Total: ₹" + total;
 }
 
-// Remove item
+
 function removeFromCart(button, index) {
-  // Visual feedback
+  
   const originalText = button.textContent;
   const originalBg = button.style.background;
 
@@ -176,36 +138,135 @@ function removeFromCart(button, index) {
     loadCart();
   }, 800);
 }
-
-
-// Load cart on page open
-loadCart();
-
-// =========================
-// CHECKOUT / PAYMENT LOGIC
-// =========================
-
-function makePayment() {
-  alert("Payment Successful ✅");
-
-  // Clear cart
+function clearCart() {
   localStorage.removeItem("cart");
-
-  // Redirect to shop
-  window.location.href = "product.html";
+  alert("Thank you! Your cart has been cleared.");
+  loadCart();
 }
 
-// Show total on checkout page
+
+
+loadCart();
+
+
+
+let currentTotal = 0;
+let discountApplied = false;
+
 (function showCheckoutTotal() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cart = getCart();
   const totalEl = document.getElementById("checkoutTotal");
   if (!totalEl) return;
 
-  let total = 0;
-  cart.forEach(item => total += item.price);
+  currentTotal = 0;
 
-  totalEl.textContent = "₹" + total;
+  cart.forEach(item => {
+    currentTotal += Number(item.price);
+  });
+
+  
+  /*if (currentTotal > 1000) {
+    currentTotal = currentTotal * 0.9;
+  }*/
+
+  totalEl.textContent = "₹" + Math.round(currentTotal);
 })();
+
+
+function applyCoupon() {
+  const input = document.getElementById("couponInput").value.trim();
+  const msg = document.getElementById("couponMsg");
+  const totalEl = document.getElementById("checkoutTotal");
+
+  if (discountApplied) {
+    msg.style.color = "green";
+    msg.textContent = "Coupon already applied ✔";
+    return;
+  }
+
+  if (input === "NAYAAB10") {
+    const discount = currentTotal * 0.10;
+    currentTotal = currentTotal - discount;
+
+    totalEl.textContent = "₹" + Math.round(currentTotal);
+    msg.style.color = "green";
+    msg.textContent = "Coupon applied! You saved 10% 🎉";
+    discountApplied = true;
+  } else {
+    msg.style.color = "red";
+    msg.textContent = "Invalid coupon code ❌";
+  }
+}
+
+
+function makePayment() {
+  alert("Payment Successful ✅");
+  localStorage.removeItem("cart");
+  window.location.href = "product.html";
+}
+
+function showPopup(event) {
+  event.preventDefault(); 
+  alert("thank you for your feedback!");
+}
+
+function storeFeedback(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("fb-name").value;
+  const email = document.getElementById("fb-email").value;
+  const phone = document.getElementById("fb-phone").value;
+  const message = document.getElementById("fb-message").value;
+  const rating = document.querySelector("input[name='rating']:checked").value;
+
+  // Create text content
+  const feedbackText =
+`----- FEEDBACK -----
+Name   : ${name}
+Email  : ${email}
+Phone  : ${phone}
+Rating : ${rating}
+Message:
+${message}
+
+Date   : ${new Date().toLocaleString()}
+---------------------`;
+
+  // Create and download text file
+  const blob = new Blob([feedbackText], { type: "text/plain" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "feedback.txt";
+  link.click();
+
+  alert("Thank you! Feedback saved successfully.");
+  event.target.reset();
+}
+
+function clearForm() {
+  document.getElementById("fb-name").value = "";
+  document.getElementById("fb-email").value = "";
+  document.getElementById("fb-phone").value = "";
+  document.getElementById("fb-message").value = "";
+
+  alert("Thank you for your feedback!");
+} 
+
+function toggleOffers() {
+  const section = document.getElementById("offersSection");
+
+  if (section.style.display === "none") {
+    section.style.display = "block";
+  } else {
+    section.style.display = "none";
+  }
+}
+
+
+
+
+
+
 
 
 
