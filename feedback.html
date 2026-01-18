@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NAYAAB | Feedback</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="product-page">
+
+  
+  <div class="nav-wrapper">
+    <nav class="nav-bar">
+      <div class="nav-left">NAYAAB</div>
+
+      <div class="nav-center">
+        <a href="index.html">HOME</a>
+        <a href="product.html">SHOP</a>
+        <a href="feedback.html" class="active">FEEDBACK</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="cart.html">CART</a>
+      </div>
+    </nav>
+  </div>
+
+  
+  <main class="product-container">
+
+    <h2 class="product-title">Customer Feedback</h2>
+
+<div class="feedback-card">
+
+  <form onsubmit="storeFeedback(event)">
+
+    <input type="text" id="fb-name" placeholder="Your Name" required>
+    <input type="email" id="fb-email" placeholder="Your Email" required>
+    <input type="tel" id="fb-phone" placeholder="Your Phone Number" pattern="[0-9]{10}" required>
+
+
+    <!-- Rating -->
+   <label class="rating-label">Rate Your Experience</label>
+
+<div class="rating-table">
+  <div class="rating-item">
+    <input type="radio" name="rating" value="5" required>
+    <span>⭐⭐⭐⭐⭐</span>
+  </div>
+
+  <div class="rating-item">
+    <input type="radio" name="rating" value="4">
+    <span>⭐⭐⭐⭐</span>
+  </div>
+
+  <div class="rating-item">
+    <input type="radio" name="rating" value="3">
+    <span>⭐⭐⭐</span>
+  </div>
+
+  <div class="rating-item">
+    <input type="radio" name="rating" value="2">
+    <span>⭐⭐</span>
+  </div>
+
+  <div class="rating-item">
+    <input type="radio" name="rating" value="1">
+    <span>⭐</span>
+  </div>
+</div>
+
+
+    <textarea id="fb-message" placeholder="Write your feedback" rows="4" required></textarea>
+
+    <button type="submit" class="btn">Submit Feedback</button>
+    <button type="button" class="btn" onclick="clearForm()" style="margin-top: 10px;">
+       Clear Form
+    </button>
+
+
+  </form>
+</div>
+
+
+
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@
 
 <body class="product-page">
 
-  <!-- FLOATING NAVBAR -->
+  
   <div class="nav-wrapper">
     <nav class="nav-bar">
       <div class="nav-left">NAYAAB</div>
@@ -27,17 +27,26 @@
       </div>
     </nav>
   </div>
+   <button class="btn" onclick="toggleOffers()" style="max-width:300px; margin-left: 35px; margin-top: 10px">
+    Show / Hide Special Offers
+   </button>
 
-  <!-- PAGE CONTENT -->
+   <div id="offersSection" style="margin-top:20px; margin-left: 35px;">
+    <h3>Special Offers</h3>
+   <p>Flat 10% discount on orders above ₹1000.</p>
+  </div>
+
+
+  
   <main class="product-container">
 
-    <!-- ================= RINGS ================= -->
+    
     <section class="category-section" id="rings">
       <h2 class="category-title">Rings</h2>
 
       <div class="product-grid">
 
-        <!-- PRODUCT 1 -->
+        
         <div class="product-card">
           <img src="images/rings/ring1-1.jpg" class="main-img" id="ring1-main" onclick="openModal(this.src)">
 
@@ -47,12 +56,12 @@
             <img src="images/rings/ring1-3.jpg" onclick="changeImg('ring1-main','images/rings/ring1-3.jpg')">
           </div>
 
-          <h3>Silver Ring</h3>
+          <h3>Classic Round Signet Ring</h3>
           <p class="price">₹1499</p>
-          <button class="btn" onclick="addToCart(this,'Silver Ring', 1499, 'images/rings/ring1-1.jpg')">Add to Cart</button>
+          <button class="btn" onclick="addToCart(this,'Classic Round Signet Ring', 1499, 'images/rings/ring1-1.jpg')">Add to Cart</button>
         </div>
 
-        <!-- PRODUCT 2 -->
+        
         <div class="product-card">
           <img src="images/rings/ring2-1.jpg" class="main-img"  id="ring2-main" onclick="openModal(this.src)">
           <div class="thumb-row">
@@ -61,12 +70,12 @@
             <img src="images/rings/ring2-3.jpg" onclick="changeImg('ring2-main','images/rings/ring2-3.jpg')">
           </div>
 
-          <h3>Black Metal Ring</h3>
+          <h3>Faith Ring</h3>
           <p class="price">₹1299</p>
-          <button class="btn" onclick="addToCart(this,'Black Metal Ring', 1299, 'images/rings/ring2-1.jpg')">Add to Cart</button>
+          <button class="btn" onclick="addToCart(this,'Faith Ring', 1299, 'images/rings/ring2-1.jpg')">Add to Cart</button>
         </div>
 
-        <!-- PRODUCT 3 -->
+        
         <div class="product-card">
           <img src="images/rings/ring3-1.jpg" class="main-img" id="ring3-main" onclick="openModal(this.src)">
           <div class="thumb-row">
@@ -75,15 +84,15 @@
             <img src="images/rings/ring3-3.jpg" onclick="changeImg('ring3-main','images/rings/ring3-3.jpg')">
           </div>
 
-          <h3>Minimal Steel Ring</h3>
+          <h3>Batman Ring</h3>
           <p class="price">₹1599</p>
-          <button class="btn" onclick="addToCart(this,'Minimal Steel Ring', 1599, 'images/rings/ring3-1.jpg')">Add to Cart</button>
+          <button class="btn" onclick="addToCart(this,'Batman Ring', 1599, 'images/rings/ring3-1.jpg')">Add to Cart</button>
         </div>
 
       </div>
     </section>
 
-    <!-- ================= WATCHES ================= -->
+    
     <section class="category-section" id="watches">
       <h2 class="category-title">Watches</h2>
 
@@ -96,9 +105,9 @@
           <img src="images/watches/watch1-2.jpg" onclick="changeImg('watch1-main','images/watches/watch1-2.jpg')">
           <img src="images/watches/watch1-3.jpg" onclick="changeImg('watch1-main','images/watches/watch1-3.jpg')">
         </div>
-        <h3>Leather Strap Watch</h3>
+        <h3>Titan watch</h3>
         <p class="price">₹2999</p>
-        <button class="btn" onclick="addToCart(this,'Leather Strap Watch', 2999, 'images/watches/watch1-1.jpg')">Add to Cart</button>
+        <button class="btn" onclick="addToCart(this,'Titan watch', 2999, 'images/watches/watch1-1.jpg')">Add to Cart</button>
       </div>
 
 
@@ -109,9 +118,9 @@
             <img src="images/watches/watch2-2.jpg" onclick="changeImg('watch2-main','images/watches/watch2-2.jpg')">
             <img src="images/watches/watch2-3.jpg" onclick="changeImg('watch2-main','images/watches/watch2-3.jpg')">
           </div>
-          <h3>Classic Black Watch</h3>
+          <h3>Cerruti 1881 Ovaro Skeleton</h3>
           <p class="price">₹3499</p>
-          <button class="btn" onclick="addToCart(this,'Classic Black Watch', 3499, 'images/watches/watch2-1.jpg')">Add to Cart</button>
+          <button class="btn" onclick="addToCart(this,'Cerruti 1881 Ovaro Skeleton', 3499, 'images/watches/watch2-1.jpg')">Add to Cart</button>
         </div>
 
         <div class="product-card">
@@ -121,16 +130,16 @@
             <img src="images/watches/watch3-2.jpg" onclick="changeImg('watch3-main','images/watches/watch3-2.jpg')">
             <img src="images/watches/watch3-3.jpg" onclick="changeImg('watch3-main','images/watches/watch3-3.jpg')">
           </div>
-          <h3>Minimal Steel Watch</h3>
+          <h3>Versace</h3>
           <p class="price">₹3799</p>
-          <button class="btn" onclick="addToCart(this,'Minimal Steel Watch', 3799, 'images/watches/watch3-1.jpg')">Add to Cart</button>
+          <button class="btn" onclick="addToCart(this,'Versace', 3799, 'images/watches/watch3-1.jpg')">Add to Cart</button>
         </div>
         
 
       </div>
     </section>
 
-    <!-- ================= BRACELETS ================= -->
+    
     <section class="category-section" id="bracelets">
       <h2 class="category-title">Bracelets</h2>
 
@@ -143,9 +152,9 @@
             <img src="images/bracelets/bracelet1-2.jpg" onclick="changeImg('bracelet1-main','images/bracelets/bracelet1-2.jpg')">
             <img src="images/bracelets/bracelet1-3.jpg" onclick="changeImg('bracelet1-main','images/bracelets/bracelet1-3.jpg')">
           </div>
-          <h3>Leather Bracelet</h3>
+          <h3>Half & Half Silver-Pearl Bracelet</h3>
           <p class="price">₹999</p>
-          <button class="btn" onclick="addToCart('Leather Bracelet', 999, 'images/bracelets/bracelet1-1.jpg')">Add to Cart</button>
+          <button class="btn" onclick="addToCart(this, 'Half & Half Silver-Pearl Bracelet', 999, 'images/bracelets/bracelet1-1.jpg')">Add to Cart</button>
         </div>
 
         <div class="product-card">
@@ -155,9 +164,9 @@
             <img src="images/bracelets/bracelet2-2.jpg" onclick="changeImg('bracelet2-main','images/bracelets/bracelet2-2.jpg')">
             <img src="images/bracelets/bracelet2-3.jpg" onclick="changeImg('bracelet2-main','images/bracelets/bracelet2-3.jpg')">
           </div>
-          <h3>Minimal Bracelet</h3>
+          <h3>Inter cuban Bracelet</h3>
           <p class="price">₹1099</p>
-          <button class="btn" onclick="addToCart('Minimal Bracelet', 1099, 'images/bracelets/bracelet2-1.jpg')">Add to Cart</button>
+          <button class="btn" onclick="addToCart(this, 'Inter cuban Bracelet', 1099, 'images/bracelets/bracelet2-1.jpg')">Add to Cart</button>
         </div>
 
         <div class="product-card">
@@ -167,23 +176,56 @@
             <img src="images/bracelets/bracelet3-2.jpg" onclick="changeImg('bracelet3-main','images/bracelets/bracelet3-2.jpg')">
             <img src="images/bracelets/bracelet3-3.jpg" onclick="changeImg('bracelet3-main','images/bracelets/bracelet3-3.jpg')">
           </div>
-          <h3>Steel Chain Bracelet</h3>
+          <h3>Bamboo Cuff</h3>
           <p class="price">₹1299</p>
-          <button class="btn" onclick="addToCart('Steel Chain Bracelet', 1299, 'images/bracelets/bracelet3-1.jpg')">Add to Cart</button>
+          <button class="btn" onclick="addToCart(this, 'Bamboo Cuff', 1299, 'images/bracelets/bracelet3-1.jpg')">Add to Cart</button>
         </div>
 
       </div>
     </section>
+     <!--
+    <section class="category-section" id="christmasoffers">
+      <h2 class="category-title">Christmas Offers</h2>
+
+      <div class="product-grid">
+
+        <div class="product-card">
+          <img src="images/rings/ring1-1.jpg" class="main-img" id="ring1-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/rings/ring1-1.jpg" onclick="changeImg('ring1-main','images/rings/ring1-1-1.jpg')">
+            <img src="images/rings/ring1-2.jpg" onclick="changeImg('ring1-main','images/rings/ring1-2.jpg')">
+            <img src="images/rings/ring1-3.jpg" onclick="changeImg('ring1-main','images/rings/ring1-3.jpg')">
+          </div>
+          <h3>1 offer</h3>
+          <p class="price">₹299</p>
+          <button class="btn" onclick="addToCart(this, '1 offer', 299, 'images/rings/ring1-1.jpg')">Add to Cart</button>
+        </div>
+
+      
+        <div class="product-card">
+          <img src="images/bracelets/bracelet1-1.jpg" class="main-img" id="bracelet1-main" onclick="openModal(this.src)">
+          <div class="thumb-row">
+            <img src="images/bracelets/bracelet1-1.jpg" onclick="changeImg('bracelet1-main','images/bracelets/bracelet1-1-1.jpg')">
+            <img src="images/bracelets/bracelet1-2.jpg" onclick="changeImg('bracelet1-main','images/bracelets/bracelet1-2.jpg')">
+            <img src="images/bracelets/bracelet1-3.jpg" onclick="changeImg('bracelet1-main','images/bracelets/bracelet1-3.jpg')">
+          </div>
+          <h3>2 offer</h3>
+          <p class="price">₹499</p>
+          <button class="btn" onclick="addToCart(this, 'cloth.1', 499, 'images/Bracelets/bracelet1-1.jpg')">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+    -->
 
   </main>
-  <!-- IMAGE MODAL -->
+  
 <div id="imgModal" class="img-modal" onclick="closeModal()">
   <span class="close-btn">&times;</span>
   <img id="modalImg">
 </div>
 
 
-  <!-- SCRIPT -->
+  
   <script src="js/script.js"></script>
 
 </body>

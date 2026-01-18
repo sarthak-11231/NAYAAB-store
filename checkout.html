@@ -8,7 +8,7 @@
 
 <body class="product-page">
 
-  <!-- NAVBAR -->
+  
   <div class="nav-wrapper">
     <nav class="nav-bar">
       <div class="nav-left">NAYAAB</div>
@@ -24,13 +24,25 @@
     </nav>
   </div>
 
-  <!-- CHECKOUT -->
+  
   <main class="product-container" style="max-width:500px;margin:auto;">
 
     <h2 class="category-title">Checkout</h2>
 
     <p>Total Amount:</p>
     <h3 id="checkoutTotal"></h3>
+    
+<div class="coupon-box">
+  <input type="text" id="couponInput" placeholder="Enter coupon code" class="coupon-input">
+
+  <button class="coupon-btn" onclick="applyCoupon()">
+    Apply
+  </button>
+</div>
+
+<p id="couponMsg" style="margin-top:10px;"></p>
+
+
 
     <br>
 
